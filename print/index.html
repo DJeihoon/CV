@@ -99,21 +99,21 @@ html[lang="en"] .about-text, html[lang="en"] .summary-text { text-align: left; h
   .h-photo img { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   @page { size: 210mm 297mm; margin: 0; }
   .pg {
-    width: 210mm;
-    height: 297mm;
-    padding: 12mm 13mm;
+    width: 190mm;
+    height: 277mm;
+    padding: 0;
     max-width: none;
     page-break-after: always; break-after: page;
-    min-height: 297mm;
+    min-height: 277mm;
     overflow: hidden;
     position: relative;
-    margin: 0;
+    margin: 0 auto;
   }
-  .pg:last-child { page-break-after: auto; break-after: auto; }
+  .pg.pg-last { page-break-after: auto; break-after: auto; }
 
   .pg-scale {
     position: absolute;
-    inset: 12mm 13mm;
+    inset: 0;
     transform: scale(var(--pg-scale, 1));
   }
   [dir="rtl"] .pg-scale { transform-origin: top right; }
@@ -460,7 +460,7 @@ html[lang="en"] .about-text, html[lang="en"] .summary-text { text-align: left; h
 </div>
 
 <!-- PAGE 2 -->
-<div class="pg">
+<div class="pg pg-last">
   <div class="pg-scale">
     <div class="pg-inner">
       <div class="pg-body">
@@ -616,6 +616,8 @@ html[lang="en"] .about-text, html[lang="en"] .summary-text { text-align: left; h
       mm.addListener(function(mql){ if (mql && mql.matches) setTimeout(fitPrintPages, 0); });
     }
   } catch(e) {}
+
+  window.__cvPrintFit = { fit: fitPrintPages, schedule: scheduleFit };
 
   var p=window.location.search.slice(1).split('&').reduce(function(o,s){var t=s.split('=');o[t[0]]=decodeURIComponent((t[1]||'').replace(/\+/g,' '));return o},{});
   var pathMatch=window.location.pathname.match(/\/print\/(fa|en|ar)(?:\/|$)/i);
