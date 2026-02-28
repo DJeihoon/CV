@@ -46,6 +46,9 @@ html[lang="fa"] .pg-num, html[lang="fa"] .si-val,
 html[lang="fa"] .lang-pct-p, html[lang="fa"] .lang-n,
 html[lang="fa"] .exp-date, html[lang="fa"] .edu-date-print,
 html[lang="fa"] #printPhoneDisplay { font-family: 'Vazirmatn', Tahoma, sans-serif; }
+html[lang="en"] .sec h2 { font-family: 'DM Sans', 'Vazirmatn', sans-serif; }
+html[lang="en"] .h-name { font-family: 'Cormorant Garamond', 'DM Sans', serif; letter-spacing: 0; }
+html[lang="en"] .about-text, html[lang="en"] .summary-text { text-align: left; hyphens: auto; }
 
 @media screen {
   body { background: #e8edf2; padding: 20px 0 80px; }
@@ -85,18 +88,46 @@ html[lang="fa"] #printPhoneDisplay { font-family: 'Vazirmatn', Tahoma, sans-seri
 }
 
 @media print {
-  body { background: white; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { background: white; }
+  body { font-size: 11pt; line-height: 1.55; }
   .print-bar { display: none !important; }
   .h-photo img { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   @page { size: 210mm 297mm; margin: 12mm 13mm; }
   .pg {
     padding: 0; max-width: none;
     page-break-after: always; break-after: page;
+    height: 273mm;
     min-height: 273mm;
+    overflow: hidden;
+    position: relative;
   }
   .pg:last-child { page-break-after: auto; break-after: auto; }
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
+
+  .pg-scale {
+    position: absolute;
+    inset: 0;
+    transform: scale(var(--pg-scale, 1));
+  }
+  [dir="rtl"] .pg-scale { transform-origin: top right; }
+  [dir="ltr"] .pg-scale { transform-origin: top left; }
+
+  .pg-inner { height: 100%; min-height: 100%; }
+  .r-header { gap: 12px; padding-bottom: 8px; margin-bottom: 10px; }
+  .h-name { font-size: 24pt; }
+  .h-role { font-size: 10.5pt; margin-bottom: 5pt; }
+  .hc { font-size: 9.5pt; }
+  .pg-body { gap: 10px; }
+  .sec { margin-bottom: 8pt; }
+  .sec h2 { margin-bottom: 8pt; padding-bottom: 3pt; }
+  .exp-meta { flex-wrap: wrap; gap: 2pt 8pt; }
+  .exp-ul { gap: 1pt; }
+  .exp-ul li { font-size: 9.75pt; line-height: 1.45; }
+  .proj-ul li { font-size: 9.75pt; line-height: 1.45; }
+  .skill-tags-print { gap: 2.5pt; }
+  .stag { font-size: 9.25pt; padding: 2pt 6pt; }
+  .lang-row-p { margin-bottom: 3pt; }
+  .pg-num { font-size: 9.5pt; padding-top: 5pt; }
 }
 
 /* ═══════════════════════════════════════
@@ -152,6 +183,8 @@ html[lang="fa"] #printPhoneDisplay { font-family: 'Vazirmatn', Tahoma, sans-seri
   font-family: 'Vazirmatn', 'DM Sans', monospace;
   direction: ltr; unicode-bidi: embed;
   text-decoration: none;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .hc svg { color: var(--gold); flex-shrink: 0; }
 
@@ -258,6 +291,8 @@ html[lang="fa"] #printPhoneDisplay { font-family: 'Vazirmatn', Tahoma, sans-seri
   font-size: 10pt; color: var(--muted);
   font-family: 'Vazirmatn', monospace; text-decoration: none;
   direction: ltr; unicode-bidi: embed;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .lr::before { content: '→'; color: var(--gold); font-size: 10pt; }
 
@@ -290,7 +325,8 @@ html[lang="fa"] #printPhoneDisplay { font-family: 'Vazirmatn', Tahoma, sans-seri
 
 <!-- PAGE 1 -->
 <div class="pg">
-  <div class="pg-inner">
+  <div class="pg-scale">
+    <div class="pg-inner">
 
     <!-- Header -->
     <div class="r-header">
@@ -411,13 +447,15 @@ html[lang="fa"] #printPhoneDisplay { font-family: 'Vazirmatn', Tahoma, sans-seri
     </div>
 
     <div class="pg-num" data-i18n-page="1">صفحه ۱ از ۲ &nbsp;|&nbsp; داود جیحون — رزومه حرفه‌ای</div>
+    </div>
   </div>
 </div>
 
 <!-- PAGE 2 -->
 <div class="pg">
-  <div class="pg-inner">
-    <div class="pg-body">
+  <div class="pg-scale">
+    <div class="pg-inner">
+      <div class="pg-body">
       <!-- MAIN -->
       <div>
         <div class="sec" data-i18n-projects="projects">
@@ -505,6 +543,7 @@ html[lang="fa"] #printPhoneDisplay { font-family: 'Vazirmatn', Tahoma, sans-seri
     </div>
 
     <div class="pg-num" data-i18n-page="2">صفحه ۲ از ۲ &nbsp;|&nbsp; داود جیحون — رزومه حرفه‌ای</div>
+    </div>
   </div>
 </div>
 
@@ -519,6 +558,48 @@ html[lang="fa"] #printPhoneDisplay { font-family: 'Vazirmatn', Tahoma, sans-seri
 
 <script>
 (function(){
+  function fitPrintPages(){
+    var pages = Array.prototype.slice.call(document.querySelectorAll('.pg'));
+    if (!pages.length) return;
+
+    pages.forEach(function(pg){
+      pg.style.setProperty('--pg-scale', '1');
+    });
+
+    requestAnimationFrame(function(){
+      pages.forEach(function(pg){
+        var inner = pg.querySelector('.pg-inner');
+        if (!inner) return;
+
+        var availH = pg.clientHeight || pg.getBoundingClientRect().height;
+        var availW = pg.clientWidth || pg.getBoundingClientRect().width;
+        var contentH = inner.scrollHeight || inner.getBoundingClientRect().height;
+        var contentW = inner.scrollWidth || inner.getBoundingClientRect().width;
+
+        if (!availH || !contentH || !availW || !contentW) return;
+
+        var scaleH = (availH - 2) / contentH;
+        var scaleW = (availW - 2) / contentW;
+        var s = Math.min(1, scaleH, scaleW);
+        if (!isFinite(s) || s <= 0) s = 1;
+
+        pg.style.setProperty('--pg-scale', String(Math.max(0.5, s)));
+      });
+    });
+  }
+
+  var fitTimer = null;
+  function scheduleFit(){
+    if (fitTimer) clearTimeout(fitTimer);
+    fitTimer = setTimeout(fitPrintPages, 30);
+  }
+
+  window.addEventListener('beforeprint', function(){ setTimeout(fitPrintPages, 0); });
+  window.addEventListener('afterprint', function(){
+    document.querySelectorAll('.pg').forEach(function(pg){ pg.style.setProperty('--pg-scale', '1'); });
+  });
+  window.addEventListener('resize', scheduleFit);
+
   var p=window.location.search.slice(1).split('&').reduce(function(o,s){var t=s.split('=');o[t[0]]=decodeURIComponent((t[1]||'').replace(/\+/g,' '));return o},{});
   var pathMatch=window.location.pathname.match(/\/print\/(fa|en|ar)(?:\/|$)/i);
   var lang=(pathMatch?pathMatch[1]:(p.lang||'fa')).toLowerCase();
@@ -543,7 +624,18 @@ html[lang="fa"] #printPhoneDisplay { font-family: 'Vazirmatn', Tahoma, sans-seri
     document.querySelectorAll('[data-i18n-projects]').forEach(function(sec){var proj=get(T,sec.getAttribute('data-i18n-projects'));if(!proj||!proj.items)return;var title=get(T,'projects.title');var html='<h2>'+loc(esc(title),lang)+'</h2>';proj.items.forEach(function(p){var items=Array.isArray(p.items)?p.items.slice():[];if(p.link&&items.length)items[items.length-1]+=' | djeihoon.ir';html+='<div class="proj-item"><div class="proj-title">'+loc(esc(p.title),lang)+'</div><ul class="proj-ul">'+items.map(function(i){return'<li>'+loc(esc(i),lang)+'</li>';}).join('')+'</ul></div>';});sec.innerHTML=html;});
     document.querySelectorAll('[data-i18n-skills]').forEach(function(sec){var sk=get(T,sec.getAttribute('data-i18n-skills'));if(!sk||!sk.items)return;var cats=sk.cats||{web:'Web',infra:'Infra',org:'Org'};var order=['web','infra','org'];var h2=sec.querySelector('h2');var html=(h2?h2.outerHTML:'')+' ';order.forEach(function(c){var items=sk.items.filter(function(x){return x.cat===c});if(items.length===0)return;html+='<div style="margin-bottom:5pt"><div style="font-size:10pt;color:var(--ash);margin-bottom:3pt;letter-spacing:0.04em">'+loc(esc(cats[c]||c),lang)+'</div><div class="skill-tags-print">';items.forEach(function(s){var cls='stag stag-adv',dot='sdot-adv';if(s.level==='intermediate'){cls='stag stag-mid';dot='sdot-mid'}else if(s.level==='basic'){cls='stag stag-bas';dot='sdot-bas'}html+='<span class="stag '+cls+'"><span class="stag-dot '+dot+'"></span>'+loc(esc(s.name),lang)+'</span>';});html+='</div></div>';});sec.innerHTML=html;});
     var el=document.getElementById('printPhoneDisplay');if(el){var d='989383965611'.replace(/^(\d{2})(\d{3})(\d{3})(\d+)/,'+$1 $2 $3 $4');d=toLocalNum(d,lang);el.textContent=(lang==='ar'||lang==='fa')?'\u202A'+d+'\u202C':d;}
+
+    scheduleFit();
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(scheduleFit).catch(function(){}); }
+    setTimeout(scheduleFit, 150);
+    setTimeout(scheduleFit, 700);
   }).catch(function(){});
+
+  window.addEventListener('load', function(){
+    scheduleFit();
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(scheduleFit).catch(function(){}); }
+    setTimeout(scheduleFit, 300);
+  });
 })();
 </script>
 </body>
