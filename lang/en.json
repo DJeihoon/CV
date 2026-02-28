@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "title": "Davood Jeihoon | Information Technology & Organizational Processes Expert",
+    "description": "Professional resume of Davood Jeihoon — Information Technology & Organizational Processes Expert. Mashhad, Iran."
+  },
+  "nav": {
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tag": "Professional Resume",
+    "name": "Davood<br><em>Jeihoon</em>",
+    "role": "Information Technology & Organizational Processes Expert",
+    "bio": "I have extensive experience in designing, developing, and supporting enterprise systems and websites, with expertise in CMS management, web performance and security optimization, payment gateway integration, and process documentation. My practical background includes web and e‑commerce development and support, internal organizational management, human resources, and personnel finance (petty cash, reconciliation, payroll). I am precise, responsible, and results-oriented, and capable of effective collaboration with technical and executive teams to implement comprehensive organizational solutions.",
+    "printBtn": "Download / Print PDF",
+    "contactBtn": "Contact Me"
+  },
+  "profile": {
+    "name": "Davood Jeihoon",
+    "role": "Information Technology & Organizational Processes Expert",
+    "location": "Location",
+    "locationVal": "Mashhad, Iran",
+    "birth": "Birth Year",
+    "birthVal": "1990",
+    "military": "Military",
+    "militaryVal": "Completed",
+    "exp": "Experience",
+    "expVal": "+18 Years",
+    "spec": "Specialty",
+    "fullLocation": "Khorasan Razavi — Mashhad"
+  },
+  "exp": {
+    "title": "Work Experience",
+    "sub": "Professional experience and career path",
+    "job1": {
+      "role": "Quality Assurance, IT Support | Internal & HR Manager",
+      "date": "Feb 2007 — Present",
+      "company": "Industrial & Service Companies",
+      "items": [
+        "Implementing and maintaining ISO 9001 and ISO 45001 quality standards",
+        "Documenting organizational processes and drafting internal regulations",
+        "Designing HR structure including recruitment process, performance evaluation and personnel records",
+        "Developing internal automation systems to reduce human error",
+        "Supporting and maintaining organizational IT infrastructure",
+        "Interfacing with insurance, tax and other government systems",
+        "Drafting and managing personnel and contractor agreements",
+        "Petty cash management, financial reconciliation and payroll calculation per current regulations"
+      ]
+    },
+    "job2": {
+      "role": "Web Designer & Developer | Operations Manager & Technical Consultant",
+      "date": "Jun 2006 — Oct 2024",
+      "company": "Freelance Projects & Startups",
+      "items": [
+        "Designing and developing corporate, e-commerce, educational and service websites (static & dynamic)",
+        "Building custom systems including auto-messenger, online exam platform and custom modules",
+        "Optimizing security, speed and website performance",
+        "Integrating domestic and international payment gateways",
+        "Technical consulting for infrastructure, server, hosting, domain, database and system architecture",
+        "Collaborating on medical HIS system development",
+        "Analysis and design of HRM and CMMS systems",
+        "Technical support and UX improvement based on user feedback"
+      ]
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "sub": "Technical knowledge and practical expertise",
+    "levels": { "expert": "Expert", "advanced": "Advanced", "intermediate": "Intermediate", "basic": "Basic" },
+    "cats": { "web": "Web & Software Development", "infra": "Infrastructure & Security", "org": "Management & Organization" },
+    "items": [
+      { "name": "Web Design & Development (Static & Dynamic)", "level": "advanced", "cat": "web" },
+      { "name": "CMS & WHMCS System Management", "level": "advanced", "cat": "web" },
+      { "name": "Custom Module Development & Programming Languages", "level": "advanced", "cat": "web" },
+      { "name": "Database, Server & Hosting Management", "level": "advanced", "cat": "infra" },
+      { "name": "Web Optimization, Security & Performance", "level": "advanced", "cat": "infra" },
+      { "name": "API Integration & Payment Gateways", "level": "advanced", "cat": "infra" },
+      { "name": "Government & Organizational Systems", "level": "advanced", "cat": "org" },
+      { "name": "SMS Services & Custom Systems Development", "level": "advanced", "cat": "web" },
+      { "name": "Content Production & Data Analysis", "level": "advanced", "cat": "org" },
+      { "name": "Contractor & Personnel Agreements", "level": "intermediate", "cat": "org" },
+      { "name": "Petty cash management, financial reconciliation and payroll calculation", "level": "intermediate", "cat": "org" },
+      { "name": "Process Documentation & ISO Requirements", "level": "basic", "cat": "org" },
+      { "name": "General, Applied & Administrative Software", "level": "advanced", "cat": "org" }
+    ]
+  },
+  "projects": {
+    "title": "Notable Projects",
+    "sub": "Portfolio and key achievements",
+    "viewPortfolio": "View Portfolio →",
+    "items": [
+      {
+        "icon": "web",
+        "title": "Website & Online System Design and Implementation",
+        "items": [
+          "Static and dynamic websites with responsive (Mobile-Friendly) UI",
+          "E-commerce, corporate, educational and service websites",
+          "Speed optimization, SEO, web performance and payment gateway integration",
+          "Digital marketing consulting and organizational infrastructure",
+          "Custom systems development (auto-messenger and online exam platform)"
+        ]
+      },
+      {
+        "icon": "hospital",
+        "title": "Collaboration on Medical HIS System Development",
+        "items": [
+          "Design and implementation of medical records management module",
+          "Improving data processing speed and system accuracy",
+          "Coordination with technical team and end users"
+        ]
+      },
+      {
+        "icon": "people",
+        "title": "HRM System Analysis & Design",
+        "items": [
+          "Structuring personnel information",
+          "Salary and benefits calculation module",
+          "Compliance with insurance and tax processes",
+          "Access level definition and internal controls"
+        ]
+      },
+      {
+        "icon": "wrench",
+        "title": "CMMS System Analysis & Design",
+        "items": [
+          "Equipment registration and technical documentation",
+          "Recording failures and maintenance history",
+          "Performance indicators and management reports"
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Education & Certifications",
+    "sub": "Academic and professional credentials",
+    "degree": "B.S. Software Technology Engineering",
+    "uni": "Islamic Azad University",
+    "date": "Sep 2014 — Feb 2017"
+  },
+  "languages": {
+    "title": "Languages",
+    "items": [
+      { "name": "Persian", "level": "Native", "flag": "ir", "pct": 100 },
+      { "name": "Arabic", "level": "Advanced", "flag": "ae", "pct": 80 },
+      { "name": "English", "level": "Intermediate", "flag": "us", "pct": 60 }
+    ]
+  },
+  "certs": {
+    "title": "Courses & Certifications",
+    "items": [
+      { "name": "IMS — Integrated Management System", "sub": "Project-based" },
+      { "name": "MCSE — Microsoft Certified Systems Engineer", "sub": "Project-based" },
+      { "name": "Security+ — CompTIA Security", "sub": "Project-based" },
+      { "name": "RT — Industrial Radiography", "sub": "Industrial Certificate" }
+    ]
+  },
+  "contact": {
+    "title": "Contact Me",
+    "sub": "Professional inquiry submission",
+    "infoTitle": "Professional Collaboration",
+    "infoDesc": "For job proposals, expert consulting, or partnership inquiries, please complete the form. I will respond as soon as possible."
+  },
+  "form": {
+    "reqType": "Request Type",
+    "rt1": "Job Offer",
+    "rt2": "Expert Consulting",
+    "rt3": "Partnership / Investment",
+    "personalInfo": "Personal Information",
+    "name": "Full Name",
+    "nameHolder": "Enter your full name",
+    "org": "Organization / Company",
+    "orgHolder": "Company or organization name",
+    "email": "Email Address",
+    "emailHolder": "example@domain.com",
+    "phone": "Phone Number",
+    "phoneHolder": "1234567890",
+    "projectDetails": "Request Details",
+    "subject": "Subject",
+    "subjectHolder": "Enter the subject of your request",
+    "message": "Message",
+    "messageHolder": "Please describe your request in detail...",
+    "dates": "Project Timeline",
+    "datesHolder": "Select date range",
+    "duration": "Duration:",
+    "budgetTitle": "Proposed Budget",
+    "budgetAmount": "Amount",
+    "budgetAmountHolder": "Budget amount",
+    "currency": "Currency",
+    "attachTitle": "Attachment",
+    "attachHint": "Drag file here or click to select",
+    "attachFormats": "PDF, Word, Excel, ZIP — Max 10MB",
+    "currencySelect": "— Select —",
+    "reset": "Clear Form",
+    "resetConfirmTitle": "Clear form?",
+    "resetConfirmText": "All entered data will be deleted.",
+    "cancel": "Cancel",
+    "fileTypeErr": "File type not allowed.",
+    "fileSizeErr": "Each file must be max 10MB.",
+    "send": "Send Request",
+    "sending": "Sending...",
+    "required": "Required"
+  },
+  "errors": {
+    "name": "Full name is required",
+    "nameMin": "Minimum 2 characters required",
+    "email": "Please enter a valid email address",
+    "subject": "Subject is required",
+    "message": "Message is required",
+    "messageMin": "Minimum 10 characters required",
+    "phoneInvalid": "Enter 8 to 15 digits",
+    "budgetUsdMin": "Minimum $20",
+    "budgetUsdMax": "Maximum $1,000,000",
+    "budgetIrtMin": "Minimum 1,000,000 Tomans",
+    "budgetIrtMax": "Maximum 20,000,000,000 Tomans"
+  },
+  "alerts": {
+    "successTitle": "Request Sent ✓",
+    "successText": "Thank you. Your message has been received and I will get back to you as soon as possible.",
+    "errorTitle": "Sending Failed",
+    "errorText": "Unfortunately the submission failed. Please contact directly via email.",
+    "networkErr": "Connection failed. Check your internet and server.",
+    "retry": "Retry",
+    "rateLimit": "Please wait a moment before submitting again.",
+    "ok": "Got it",
+    "close": "Close"
+  },
+  "footer": { "copy": "Davood Jeihoon — Information Technology & Organizational Processes Expert | Mashhad, Iran" },
+  "a11y": { "skipLink": "Skip to content" },
+  "print": {
+    "headerRole": "Information Technology & Organizational Processes Expert",
+    "pageOf": "Page {{n}} of {{total}}",
+    "resumeTitle": "Professional Resume",
+    "printBtn": "Print / Save PDF",
+    "closeBtn": "Close",
+    "personalInfo": "Personal Info",
+    "birth": "Birth",
+    "status": "Status",
+    "specialty": "Specialty",
+    "experience": "Experience",
+    "summaryTitle": "Professional Summary",
+    "summary": "I have extensive experience in designing, developing, and supporting enterprise systems and websites, with expertise in CMS management, web performance and security optimization, payment gateway integration, and process documentation. My practical background includes web and e‑commerce development and support, internal organizational management, human resources, and personnel finance (petty cash, reconciliation, payroll). I am precise, responsible, and results-oriented, and capable of effective collaboration with technical and executive teams to implement comprehensive organizational solutions.",
+    "levelGuide": "Level Guide",
+    "advanced": "Advanced",
+    "intermediate": "Intermediate",
+    "basic": "Basic",
+    "webDev": "Web & Software Dev",
+    "infraSecurity": "Infrastructure & Security",
+    "management": "Management & Organization"
+  },
+  "days": "days",
+  "day": "day",
+  "month": "month",
+  "months": "months",
+  "year": "year",
+  "years": "years",
+  "and": "and"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "djeihoon/resume",
+  "description": "Resume website contact form",
+  "require": {
+    "phpmailer/phpmailer": "^6.9"
+  }
+}

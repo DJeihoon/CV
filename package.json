@@ -1,0 +1,20 @@
+{
+  "name": "resume-website",
+  "version": "1.0.0",
+  "description": "Professional resume website - DJeihoon.ir",
+  "scripts": {
+    "serve": "npx serve . -p 3000",
+    "build": "npm run minify:css && npm run minify:js",
+    "minify:css": "npx clean-css-cli css/main.css -o css/main.min.css",
+    "minify:js": "npx terser js/main.js -c -m -o js/main.min.js",
+    "test": "npm run lint && npm run build",
+    "lint": "npx eslint js/main.js sw.js --max-warnings 0 || true",
+    "sri": "node scripts/gen-sri.js",
+    "sri:ps1": "powershell -ExecutionPolicy Bypass -File scripts/gen-sri.ps1"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^10.6.0",
+    "eslint": "^8.57.0",
+    "terser": "^5.24.0"
+  }
+}

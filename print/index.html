@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" id="printRoot">
+<head>
+<script>(function(){var p=location.pathname;var b=p.startsWith('/cv')?'/cv/':(p.replace(/\/print\/?.*$/,'').replace(/\/?$/,'')||'/');if(!b.endsWith('/'))b+='/';if(b!=='/'){var el=document.createElement('base');el.href=location.origin+b;document.head.insertBefore(el,document.head.firstChild);}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/profile.png">
+<link rel="preload" href="assets/profile.png" as="image">
+<title>رزومه — داود جیحون | نسخه چاپ</title>
+<link rel="canonical" href="https://djeihoon.ir/cv/print/">
+<link rel="alternate" hreflang="fa" href="https://djeihoon.ir/cv/print/">
+<link rel="alternate" hreflang="en" href="https://djeihoon.ir/cv/print/en/">
+<link rel="alternate" hreflang="ar" href="https://djeihoon.ir/cv/print/ar/">
+<link rel="alternate" hreflang="x-default" href="https://djeihoon.ir/cv/print/">
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─── VARIABLES ─── */
+:root {
+  --navy: #0c1a28;
+  --gold: #b8963e;
+  --gold-light: #d4ac54;
+  --slate: #3d5068;
+  --ash: #6b7d90;
+  --text: #1e2d3d;
+  --muted: #4a5f72;
+  --border: #dce6ef;
+  --bg: #f5f8fb;
+  --white: #ffffff;
+}
+
+/* ─── RESET ─── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html[dir="rtl"] { direction: rtl; }
+html[dir="ltr"] { direction: ltr; }
+body {
+  font-family: 'Vazirmatn', Tahoma, 'Segoe UI', sans-serif;
+  font-size: 11.5pt;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--white);
+}
+html[lang="en"] body { font-family: 'DM Sans', 'Vazirmatn', sans-serif; }
+body { direction: inherit; }
+html[lang="fa"] .pg-num, html[lang="fa"] .si-val,
+html[lang="fa"] .lang-pct-p, html[lang="fa"] .lang-n,
+html[lang="fa"] .exp-date, html[lang="fa"] .edu-date-print,
+html[lang="fa"] #printPhoneDisplay { font-family: 'Vazirmatn', Tahoma, sans-serif; }
+
+@media screen {
+  body { background: #e8edf2; padding: 20px 0 80px; }
+  .pg {
+    background: var(--white);
+    max-width: 210mm;
+    margin: 0 auto 24px;
+    padding: 14mm 14mm 10mm;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.14);
+    border-radius: 4px;
+  }
+  .print-bar {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--navy);
+    display: flex; justify-content: center; gap: 10px;
+    padding: 12px 20px;
+    z-index: 100;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+  }
+  .pbtn {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: var(--navy); border: none;
+    padding: 9px 22px; border-radius: 20px;
+    font-family: 'Vazirmatn', sans-serif; font-size: 9.5pt; font-weight: 600;
+    cursor: pointer; display: flex; align-items: center; gap: 6px;
+    transition: transform 0.2s;
+  }
+  .pbtn:hover { transform: translateY(-2px); }
+  .pbtn-ghost {
+    background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 9px 18px; border-radius: 20px;
+    font-family: 'Vazirmatn', sans-serif; font-size: 9.5pt;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .pbtn-ghost:hover { color: white; border-color: rgba(255,255,255,0.45); }
+}
+
+@media print {
+  body { background: white; }
+  .print-bar { display: none !important; }
+  .h-photo img { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  @page { size: 210mm 297mm; margin: 12mm 13mm; }
+  .pg {
+    padding: 0; max-width: none;
+    page-break-after: always; break-after: page;
+    min-height: 273mm;
+  }
+  .pg:last-child { page-break-after: auto; break-after: auto; }
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ═══════════════════════════════════════
+   PAGE INNER STRUCTURE
+════════════════════════════════════════ */
+.pg-inner {
+  display: flex; flex-direction: column;
+  height: 100%; min-height: 250mm;
+}
+
+/* ─── HEADER ─── */
+.r-header {
+  display: grid;
+  grid-template-columns: 1fr 46mm;
+  gap: 16px; align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1.5pt solid var(--navy);
+  margin-bottom: 12px;
+}
+
+.h-photo {
+  width: 42mm; height: 42mm; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; overflow: hidden;
+  background: linear-gradient(135deg, #e8e4dc, #d4cfc4);
+}
+.h-photo img {
+  width: 100%; height: 100%;
+  border-radius: 50%; object-fit: cover;
+  border: 1.5pt solid var(--gold);
+  display: block;
+}
+.h-photo-fallback {
+  width: 42mm; height: 42mm; border-radius: 50%;
+  background: linear-gradient(135deg, #b8963e, #6b5420);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-size: 18pt; font-weight: 700;
+  color: var(--navy); border: 1.5pt solid var(--gold); margin: 0 auto;
+}
+
+.h-name {
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  font-size: 26pt; font-weight: 700; color: var(--navy);
+  line-height: 1.15; margin-bottom: 4pt;
+  letter-spacing: 0.01em;
+}
+.h-name span { color: var(--gold); }
+.h-role { font-size: 11pt; color: var(--ash); margin-bottom: 6pt; line-height: 1.4; }
+.h-contacts { display: flex; flex-wrap: wrap; gap: 3px 12px; }
+.hc {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 10pt; color: var(--muted);
+  font-family: 'Vazirmatn', 'DM Sans', monospace;
+  direction: ltr; unicode-bidi: embed;
+  text-decoration: none;
+}
+.hc svg { color: var(--gold); flex-shrink: 0; }
+
+/* ─── PAGE BODY ─── */
+.pg-body {
+  display: grid; grid-template-columns: 1fr 46mm; gap: 12px; flex: 1;
+}
+
+/* ─── SECTION ─── */
+.sec { margin-bottom: 9pt; }
+.sec h2 {
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  font-size: 13pt; font-weight: 700; color: var(--navy);
+  padding-bottom: 4pt; margin-bottom: 10pt;
+  border-bottom: 1pt solid var(--gold);
+  letter-spacing: 0.02em;
+}
+
+/* ─── EXPERIENCE ─── */
+.exp-item { margin-bottom: 6pt; }
+.exp-item + .exp-item { border-top: 0.3pt solid var(--border); padding-top: 6pt; }
+.exp-role { font-size: 10.5pt; font-weight: 600; color: var(--navy); line-height: 1.35; }
+.exp-meta { display: flex; justify-content: space-between; align-items: center; margin: 2pt 0 3pt; }
+.exp-co { font-size: 10pt; color: var(--ash); }
+.exp-date {
+  font-size: 10pt; color: var(--gold);
+  background: rgba(184,150,62,0.08); border-radius: 3pt;
+  padding: 1pt 5pt; font-family: 'Courier New', monospace;
+  direction: ltr; unicode-bidi: embed;
+}
+.exp-ul { list-style: none; display: grid; gap: 1.5pt; }
+.exp-ul li {
+  font-size: 10pt; color: var(--muted);
+  padding-right: 9pt; position: relative; line-height: 1.5;
+}
+.exp-ul li::before { content: '›'; position: absolute; right: 0; color: var(--gold); font-size: 10pt; line-height: 1.3; }
+
+/* ─── PROJECTS (Page 2) ─── */
+.proj-item { margin-bottom: 5pt; }
+.proj-title { font-size: 10.5pt; font-weight: 600; color: var(--navy); margin-bottom: 2pt; line-height: 1.35; }
+.proj-ul { list-style: none; }
+.proj-ul li {
+  font-size: 10pt; color: var(--muted);
+  padding-right: 8pt; position: relative; line-height: 1.5;
+}
+.proj-ul li::before { content: '—'; position: absolute; right: 0; color: var(--gold); font-size: 10pt; top: 1pt; }
+
+/* ─── SIDEBAR ─── */
+.sidebar {
+  padding-right: 10pt;
+  border-right: 0.5pt solid var(--border);
+}
+.sidebar .sec h2 { font-size: 11pt; }
+
+/* ─── SKILL TAGS (no %) ─── */
+.skill-tags-print { display: flex; flex-wrap: wrap; gap: 3pt; }
+.stag {
+  display: inline-flex; align-items: center; gap: 3pt;
+  padding: 2.5pt 7pt; border-radius: 4pt; font-size: 10pt;
+  border: 0.4pt solid var(--border);
+}
+.stag-adv { background: rgba(184,150,62,0.1); border-color: rgba(184,150,62,0.3); color: #6b4f1a; }
+.stag-mid { background: rgba(100,130,160,0.1); border-color: rgba(100,130,160,0.3); color: var(--slate); }
+.stag-bas { background: var(--bg); color: var(--ash); }
+.stag-dot { width: 5pt; height: 5pt; border-radius: 50%; flex-shrink: 0; }
+.sdot-adv { background: var(--gold); }
+.sdot-mid { background: #7896b2; }
+.sdot-bas { background: #b0bfcf; }
+
+/* ─── SIDEBAR ITEMS ─── */
+.si {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 4pt 0; border-bottom: 0.3pt solid var(--border); font-size: 10pt;
+}
+.si:last-child { border-bottom: none; }
+.si-lbl { color: var(--ash); font-size: 10pt; }
+.si-val { color: var(--text); font-weight: 500; font-size: 10pt; }
+
+/* ─── CERT ─── */
+.cert-item-p { display: flex; align-items: flex-start; gap: 4pt; margin-bottom: 4pt; }
+.cert-dot-p { width: 5pt; height: 5pt; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 2.5pt; }
+.cert-name-p { font-size: 10pt; color: var(--text); font-family: 'Vazirmatn', monospace; }
+.cert-sub-p { font-size: 10pt; color: var(--ash); }
+
+/* ─── LANG ─── */
+.lang-row-p { display: flex; align-items: center; gap: 5pt; margin-bottom: 3.5pt; }
+.lang-n { font-size: 10pt; color: var(--text); min-width: 20mm; }
+.lang-bar-p { flex: 1; height: 2.5pt; background: var(--border); border-radius: 2pt; overflow: hidden; }
+.lang-fill-p { height: 100%; background: var(--gold); border-radius: 2pt; }
+.lang-pct-p { font-size: 10pt; color: var(--ash); min-width: 12mm; text-align: left; font-family: 'Vazirmatn', monospace; }
+.lang-flag-p { width: 22px; height: 22px; object-fit: cover; border-radius: 50%; vertical-align: middle; border: 1.5pt solid var(--gold); box-shadow: 0 1px 3px rgba(0,0,0,0.15); flex-shrink: 0; }
+
+/* ─── LTR overrides ─── */
+[dir="ltr"] .sidebar { padding-right: 0; padding-left: 10pt; border-right: none; border-left: 0.5pt solid var(--border); }
+[dir="ltr"] .exp-ul li { padding-right: 0; padding-left: 9pt; }
+[dir="ltr"] .exp-ul li::before { right: auto; left: 0; }
+[dir="ltr"] .proj-ul li { padding-right: 0; padding-left: 8pt; }
+[dir="ltr"] .proj-ul li::before { right: auto; left: 0; }
+
+/* ─── LINKS ─── */
+.link-row { display: grid; gap: 2.5pt; }
+.lr {
+  display: flex; align-items: center; gap: 4pt;
+  font-size: 10pt; color: var(--muted);
+  font-family: 'Vazirmatn', monospace; text-decoration: none;
+  direction: ltr; unicode-bidi: embed;
+}
+.lr::before { content: '→'; color: var(--gold); font-size: 10pt; }
+
+/* ─── ABOUT / SUMMARY ─── */
+.about-text, .summary-text { font-size: 10.5pt; color: var(--text); line-height: 1.65; text-align: justify; }
+
+/* ─── PAGE NUM ─── */
+.pg-num {
+  margin-top: auto; padding-top: 6pt;
+  font-size: 10pt; color: var(--ash); text-align: center;
+  border-top: 0.3pt solid var(--border);
+}
+
+/* ─── GOLD MINI ─── */
+.gm { width: 28pt; height: 1.5pt; background: var(--gold); margin-bottom: 5pt; }
+
+/* ─── Education date (match exp-date, compact for one line) ─── */
+.edu-date-print {
+  font-size: 8.5pt; color: var(--gold);
+  background: rgba(184,150,62,0.08); border-radius: 3pt;
+  padding: 1pt 5pt; font-family: 'Courier New', monospace;
+  direction: ltr; unicode-bidi: embed;
+  display: inline-block; margin-top: 2pt;
+  white-space: nowrap;
+}
+
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="pg">
+  <div class="pg-inner">
+
+    <!-- Header -->
+    <div class="r-header">
+      <div>
+        <div class="h-name" data-i18n="profile.name">داود جیحون</div>
+        <div class="h-role" data-i18n="print.headerRole">کارشناس فناوری اطلاعات و فرآیندهای سازمانی</div>
+        <div class="h-contacts">
+          <a href="tel:+989383965611" class="hc">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 013 1.18 2 2 0 014.99 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <span id="printPhoneDisplay" style="direction:ltr;unicode-bidi:embed">+98 938 396 5611</span>
+          </a>
+          <a href="mailto:info@djeihoon.ir" class="hc">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@djeihoon.ir
+          </a>
+          <a href="https://djeihoon.ir" class="hc">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+            djeihoon.ir
+          </a>
+          <span class="hc" data-i18n="profile.locationVal" style="direction:rtl;unicode-bidi:normal">مشهد، ایران</span>
+        </div>
+      </div>
+      <div class="h-photo">
+        <img src="assets/profile.png" alt="Davood Jeihoon"
+          onerror="if(this.src.indexOf('djeihoon')<0){this.src='https://djeihoon.ir/cv/assets/profile.png'}else{this.style.display='none';if(this.nextElementSibling)this.nextElementSibling.style.display='flex'}">
+        <div class="h-photo-fallback" style="display:none">DJ</div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="pg-body">
+      <!-- MAIN -->
+      <div>
+        <div class="sec sec-summary">
+          <h2 data-i18n="print.summaryTitle">خلاصه حرفه‌ای</h2>
+          <p class="summary-text" data-i18n-html="print.summary">دارای تجربه گسترده در طراحی، توسعه و پشتیبانی سامانه‌ها و وب‌سایت‌های سازمانی هستم، با مهارت در مدیریت سیستم‌های CMS، بهینه‌سازی عملکرد و امنیت وب، اتصال درگاه‌های پرداخت و مستندسازی فرآیندها. سابقه عملی من شامل توسعه و پشتیبانی وب‌سایت‌ها و فروشگاه‌های اینترنتی، مدیریت داخلی سازمان، منابع انسانی و امور مالی پرسنل مانند تنخواه‌گردانی، مغایرت‌گیری و محاسبه حقوق و دستمزد است. دقیق، مسئول و نتیجه‌گرا هستم و قادر به همکاری موثر با تیم‌های فنی و اجرایی برای پیاده‌سازی راهکارهای جامع و کارآمد سازمانی می‌باشم.</p>
+        </div>
+        <div class="sec">
+          <h2 data-i18n="exp.title">سوابق کاری</h2>
+          <div class="exp-item" data-i18n-exp="job1">
+            <div class="exp-role" data-i18n="exp.job1.role">تضمین کیفیت، پشتیبان IT | مدیر داخلی و منابع انسانی</div>
+            <div class="exp-meta">
+              <span class="exp-co" data-i18n="exp.job1.company">شرکت‌های صنعتی و خدماتی</span>
+              <span class="exp-date" data-i18n="exp.job1.date">1385 — اکنون</span>
+            </div>
+            <ul class="exp-ul" data-i18n-list="exp.job1.items">
+              <li>مشارکت در استقرار و نگهداری استانداردهای ISO 9001 و ISO 45001</li>
+              <li>مستندسازی فرآیندهای سازمانی و تدوین آیین‌نامه‌های داخلی</li>
+              <li>طراحی ساختار منابع انسانی شامل فرآیند جذب، ارزیابی عملکرد و مستندسازی سوابق پرسنلی</li>
+              <li>راه‌اندازی و توسعه اتوماسیون‌های داخلی به منظور کاهش خطای انسانی</li>
+              <li>پشتیبانی و نگهداری زیرساخت‌های IT سازمان</li>
+              <li>تعامل با سامانه‌های بیمه، مالیات و سایر سامانه‌های دولتی</li>
+              <li>تنظیم و مدیریت قراردادهای پرسنلی و پیمانکاری</li>
+            </ul>
+          </div>
+          <div class="exp-item" data-i18n-exp="job2">
+            <div class="exp-role" data-i18n="exp.job2.role">طراح و توسعه‌دهنده وب | مدیر عملیات و مشاور فنی</div>
+            <div class="exp-meta">
+              <span class="exp-co" data-i18n="exp.job2.company">پروژه‌های فریلنسری و استارتاپی</span>
+              <span class="exp-date" data-i18n="exp.job2.date">1385 — 1403</span>
+            </div>
+            <ul class="exp-ul" data-i18n-list="exp.job2.items">
+              <li>طراحی و توسعه وب‌سایت‌های شرکتی، فروشگاهی، آموزشی و خدماتی (استاتیک و داینامیک)</li>
+              <li>پیاده‌سازی سامانه‌های اختصاصی شامل پیام‌رسان خودکار، سامانه آزمون آنلاین و ماژول‌های سفارشی</li>
+              <li>بهینه‌سازی امنیت، سرعت و عملکرد وب‌سایت‌ها</li>
+              <li>اتصال درگاه‌های پرداخت داخلی و بین‌المللی</li>
+              <li>مشاوره فنی در انتخاب زیرساخت‌ها، سرور، هاست، دامنه، پایگاه داده و معماری سامانه</li>
+              <li>همکاری در توسعه سامانه HIS پزشکی</li>
+              <li>تحلیل و طراحی سامانه‌های HRM و CMMS</li>
+              <li>پشتیبانی فنی و بهبود تجربه کاربری بر اساس بازخورد کاربران</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="sec">
+          <h2 data-i18n="print.personalInfo">اطلاعات فردی</h2>
+          <div class="si"><span class="si-lbl" data-i18n="print.birth">تولد</span><span class="si-val" data-i18n="profile.birthVal">۱۳۶۹</span></div>
+          <div class="si"><span class="si-lbl" data-i18n="print.status">وضعیت</span><span class="si-val" data-i18n="profile.militaryVal">پایان خدمت</span></div>
+          <div class="si"><span class="si-lbl" data-i18n="print.specialty">تخصص</span><span class="si-val" style="direction:ltr;font-family:monospace">IT|HRM|QA</span></div>
+          <div class="si"><span class="si-lbl" data-i18n="print.experience">سابقه</span><span class="si-val" data-i18n="profile.expVal">+۱۸ سال</span></div>
+        </div>
+
+        <div class="sec">
+          <h2 data-i18n="education.title">تحصیلات</h2>
+          <div class="gm"></div>
+          <div style="font-size:10pt;font-weight:600;color:var(--navy);margin-bottom:2pt" data-i18n="education.degree">کارشناسی مهندسی تکنولوژی نرم‌افزار</div>
+          <div style="font-size:10pt;color:var(--ash)" data-i18n="education.uni">دانشگاه آزاد اسلامی</div>
+          <div class="edu-date-print" data-i18n="education.date">مهر ۱۳۹۳ — بهمن ۱۳۹۵</div>
+        </div>
+
+        <div class="sec" data-i18n-certs="certs.items">
+          <h2 data-i18n="certs.title">گواهینامه‌ها</h2>
+          <div class="cert-item-p"><div class="cert-dot-p"></div><div><div class="cert-name-p">IMS</div><div class="cert-sub-p">Integrated Management System</div></div></div>
+          <div class="cert-item-p"><div class="cert-dot-p"></div><div><div class="cert-name-p">MCSE</div><div class="cert-sub-p">Microsoft Certified Engineer</div></div></div>
+          <div class="cert-item-p"><div class="cert-dot-p"></div><div><div class="cert-name-p">Security+</div><div class="cert-sub-p">CompTIA Security</div></div></div>
+          <div class="cert-item-p"><div class="cert-dot-p"></div><div><div class="cert-name-p">RT</div><div class="cert-sub-p">Industrial Radiography</div></div></div>
+        </div>
+
+        <div class="sec" data-i18n-langs="languages.items">
+          <h2 data-i18n="languages.title">زبان‌ها</h2>
+          <div class="lang-row-p"><span class="lang-n">فارسی</span><div class="lang-bar-p"><div class="lang-fill-p" style="width:100%"></div></div><img src="https://flagcdn.com/w80/ir.png" srcset="https://flagcdn.com/w160/ir.png 2x" alt="" class="lang-flag-p" width="22" height="22"></div>
+          <div class="lang-row-p"><span class="lang-n">عربی</span><div class="lang-bar-p"><div class="lang-fill-p" style="width:80%"></div></div><img src="https://flagcdn.com/w80/ae.png" srcset="https://flagcdn.com/w160/ae.png 2x" alt="" class="lang-flag-p" width="22" height="22"></div>
+          <div class="lang-row-p"><span class="lang-n">انگلیسی</span><div class="lang-bar-p"><div class="lang-fill-p" style="width:60%"></div></div><img src="https://flagcdn.com/w80/us.png" srcset="https://flagcdn.com/w160/us.png 2x" alt="" class="lang-flag-p" width="22" height="22"></div>
+        </div>
+
+        <div class="sec">
+          <h2>لینک‌ها</h2>
+          <div class="link-row">
+            <a href="https://djeihoon.ir" class="lr">djeihoon.ir</a>
+            <a href="https://linkedin.com/in/davood-jeihoon" class="lr">linkedIn/davood-jeihoon</a>
+            <a href="https://github.com/djeihoon" class="lr">github/djeihoon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pg-num" data-i18n-page="1">صفحه ۱ از ۲ &nbsp;|&nbsp; داود جیحون — رزومه حرفه‌ای</div>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="pg">
+  <div class="pg-inner">
+    <div class="pg-body">
+      <!-- MAIN -->
+      <div>
+        <div class="sec" data-i18n-projects="projects">
+          <h2 data-i18n="projects.title">پروژه‌های برجسته</h2>
+          <div class="proj-item">
+            <div class="proj-title">طراحی و پیاده‌سازی وب‌سایت‌ها و سامانه‌های آنلاین</div>
+            <ul class="proj-ul">
+              <li>وب‌سایت‌های استاتیک و داینامیک با رابط کاربری واکنش‌گرا (Responsive / Mobile-Friendly)</li>
+              <li>وب‌سایت‌های فروشگاهی، شرکتی، آموزشی و خدماتی</li>
+              <li>بهینه‌سازی سرعت، سئو، عملکرد وب و اتصال درگاه‌های پرداخت</li>
+              <li>مشاوره دیجیتال مارکتینگ و زیرساخت سازمانی</li>
+              <li>توسعه سامانه‌های اختصاصی (پیام‌رسان خودکار و سامانه آزمون آنلاین) | djeihoon.ir</li>
+            </ul>
+          </div>
+          <div class="proj-item">
+            <div class="proj-title">همکاری در توسعه سامانه HIS پزشکی</div>
+            <ul class="proj-ul">
+              <li>طراحی و پیاده‌سازی ماژول مدیریت پرونده‌های پزشکی</li>
+              <li>بهبود سرعت پردازش داده‌ها و دقت سیستم</li>
+              <li>هماهنگی با تیم فنی و کاربران نهایی</li>
+            </ul>
+          </div>
+          <div class="proj-item">
+            <div class="proj-title">تحلیل و طراحی سامانه HRM</div>
+            <ul class="proj-ul">
+              <li>ساختاردهی اطلاعات پرسنلی</li>
+              <li>ماژول محاسبه حقوق و مزایا</li>
+              <li>انطباق با فرآیندهای بیمه و مالیات</li>
+              <li>تعریف سطوح دسترسی و کنترل داخلی</li>
+            </ul>
+          </div>
+          <div class="proj-item">
+            <div class="proj-title">تحلیل و طراحی سامانه CMMS</div>
+            <ul class="proj-ul">
+              <li>ثبت تجهیزات و شناسنامه فنی</li>
+              <li>ثبت خرابی‌ها و سوابق تعمیرات</li>
+              <li>تعریف شاخص‌های عملکردی و گزارش‌های مدیریتی</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="sec" data-i18n-skills="skills">
+          <h2 data-i18n="skills.title">مهارت‌ها</h2>
+          <div style="margin-bottom:5pt">
+            <div style="font-size:10pt;color:var(--ash);margin-bottom:3pt;letter-spacing:0.04em">توسعه وب و نرم‌افزار</div>
+            <div class="skill-tags-print">
+              <span class="stag stag-adv"><span class="stag-dot sdot-adv"></span>طراحی و توسعه وب (استاتیک و داینامیک)</span>
+              <span class="stag stag-adv"><span class="stag-dot sdot-adv"></span>مدیریت سیستم‌های CMS و WHMCS</span>
+              <span class="stag stag-adv"><span class="stag-dot sdot-adv"></span>توسعه ماژول‌های سفارشی و زبان‌های برنامه‌نویسی</span>
+              <span class="stag stag-adv"><span class="stag-dot sdot-adv"></span>توسعه سرویس‌های پیامکی و سامانه‌های اختصاصی</span>
+            </div>
+          </div>
+          <div style="margin-bottom:5pt">
+            <div style="font-size:10pt;color:var(--ash);margin-bottom:3pt;letter-spacing:0.04em">زیرساخت و امنیت</div>
+            <div class="skill-tags-print">
+              <span class="stag stag-adv"><span class="stag-dot sdot-adv"></span>مدیریت پایگاه داده، سرور و هاست</span>
+              <span class="stag stag-adv"><span class="stag-dot sdot-adv"></span>بهینه‌سازی وب، امنیت و عملکرد</span>
+              <span class="stag stag-adv"><span class="stag-dot sdot-adv"></span>اتصال API و درگاه‌های پرداخت</span>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:10pt;color:var(--ash);margin-bottom:3pt;letter-spacing:0.04em">مدیریت و سازمان</div>
+            <div class="skill-tags-print">
+              <span class="stag stag-adv"><span class="stag-dot sdot-adv"></span>کار با سامانه‌های دولتی و سازمانی</span>
+              <span class="stag stag-adv"><span class="stag-dot sdot-adv"></span>تولید محتوا و تحلیل داده</span>
+              <span class="stag stag-mid"><span class="stag-dot sdot-mid"></span>تنظیم قراردادهای پیمانکاری و پرسنلی</span>
+              <span class="stag stag-bas"><span class="stag-dot sdot-bas"></span>مستندسازی فرآیندها و الزامات ISO</span>
+              <span class="stag stag-adv"><span class="stag-dot sdot-adv"></span>نرم‌افزارهای عمومی، کاربردی و اداری</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <h2 data-i18n="print.levelGuide">راهنمای سطح</h2>
+          <div style="display:grid;gap:2.5pt">
+            <div style="display:flex;align-items:center;gap:4pt;font-size:10pt;color:var(--muted)"><span style="display:inline-block;width:6pt;height:6pt;border-radius:50%;background:var(--gold)"></span> <span data-i18n="print.advanced">پیشرفته</span></div>
+            <div style="display:flex;align-items:center;gap:4pt;font-size:10pt;color:var(--muted)"><span style="display:inline-block;width:6pt;height:6pt;border-radius:50%;background:#7896b2"></span> <span data-i18n="print.intermediate">متوسط</span></div>
+            <div style="display:flex;align-items:center;gap:4pt;font-size:10pt;color:var(--muted)"><span style="display:inline-block;width:6pt;height:6pt;border-radius:50%;background:#b0bfcf"></span> <span data-i18n="print.basic">پایه</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pg-num" data-i18n-page="2">صفحه ۲ از ۲ &nbsp;|&nbsp; داود جیحون — رزومه حرفه‌ای</div>
+  </div>
+</div>
+
+<!-- Print Bar -->
+<div class="print-bar">
+  <button class="pbtn" onclick="window.print()">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    <span data-i18n="print.printBtn">چاپ / ذخیره PDF</span>
+  </button>
+  <button class="pbtn-ghost" onclick="window.close()">✕ <span data-i18n="print.closeBtn">بستن</span></button>
+</div>
+
+<script>
+(function(){
+  var p=window.location.search.slice(1).split('&').reduce(function(o,s){var t=s.split('=');o[t[0]]=decodeURIComponent((t[1]||'').replace(/\+/g,' '));return o},{});
+  var pathMatch=window.location.pathname.match(/\/print\/(fa|en|ar)(?:\/|$)/i);
+  var lang=(pathMatch?pathMatch[1]:(p.lang||'fa')).toLowerCase();
+  if(lang!=='en'&&lang!=='ar')lang='fa';
+  var root=document.getElementById('printRoot');
+  root.setAttribute('lang',lang);
+  root.setAttribute('dir',lang==='en'?'ltr':'rtl');
+  document.title=lang==='fa'?'رزومه — داود جیحون | نسخه چاپ':lang==='en'?'Resume — Davood Jeihoon | Print':'السيرة الذاتية — داوود جیحون | طباعة';
+  var canon=document.querySelector('link[rel="canonical"]');if(canon)canon.href='https://djeihoon.ir/cv/print/'+(lang==='fa'?'':lang+'/');
+  function toLocalNum(n,l){if(n==null||n==='')return String(n);if(l!=='fa')return String(n);var fa=['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];return String(n).replace(/\d/g,function(d){return fa[parseInt(d,10)];});}
+  function loc(s,l){return l==='fa'?toLocalNum(String(s),l):(s==null?'':String(s));}
+  var basePath=(location.pathname.startsWith('/cv')?'/cv':(location.pathname.replace(/\/print\/?.*$/,'')||'/')).replace(/\/?$/,'')||'/';if(!basePath.endsWith('/'))basePath+='/';
+  fetch(basePath+'lang/'+lang+'.json').then(function(r){return r.ok?r.json():Promise.reject();}).then(function(T){
+    function get(o,k){var p=k.split('.');for(var i=0;i<p.length&&o;i++)o=o[p[i]];return o;}
+    function esc(s){if(s==null)return '';var d=document.createElement('div');d.textContent=String(s);return d.innerHTML;}
+    document.querySelectorAll('[data-i18n]').forEach(function(el){var v=get(T,el.getAttribute('data-i18n'));if(v!=null)el.textContent=loc(v,lang);});
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){var v=get(T,el.getAttribute('data-i18n-html'));if(v!=null)el.innerHTML=loc(v,lang);});
+    document.querySelectorAll('[data-i18n-list]').forEach(function(ul){var arr=get(T,ul.getAttribute('data-i18n-list'));if(Array.isArray(arr))ul.innerHTML=arr.map(function(s){return'<li>'+loc(esc(s),lang)+'</li>';}).join('');});
+    document.querySelectorAll('[data-i18n-page]').forEach(function(el){var n=el.getAttribute('data-i18n-page');var t=get(T,'print.pageOf');if(t)t=t.replace('{{n}}',loc(n,lang)).replace('{{total}}',loc('2',lang));var name=loc(get(T,'profile.name')||'',lang);var rt=loc(get(T,'print.resumeTitle')||'',lang);el.textContent=(t||'')+'  |  '+name+' — '+rt;});
+    document.querySelectorAll('[data-i18n-certs]').forEach(function(sec){var arr=get(T,sec.getAttribute('data-i18n-certs'));if(!Array.isArray(arr))return;var h2=sec.querySelector('h2');var html=h2?h2.outerHTML:'';arr.forEach(function(c){html+='<div class="cert-item-p"><div class="cert-dot-p"></div><div><div class="cert-name-p">'+loc(esc(c.name),lang)+'</div><div class="cert-sub-p">'+loc(esc(c.sub),lang)+'</div></div></div>';});sec.innerHTML=html;});
+    document.querySelectorAll('[data-i18n-langs]').forEach(function(sec){var arr=get(T,sec.getAttribute('data-i18n-langs'));if(!Array.isArray(arr))return;var h2=sec.querySelector('h2');var html=h2?h2.outerHTML:'';arr.forEach(function(l){var w=(l.pct||0)+'%';var fc=(l.flag||'ir').toLowerCase();html+='<div class="lang-row-p"><span class="lang-n">'+loc(esc(l.name),lang)+'</span><div class="lang-bar-p"><div class="lang-fill-p" style="width:'+w+'"></div></div><img src="https://flagcdn.com/w80/'+fc+'.png" srcset="https://flagcdn.com/w160/'+fc+'.png 2x" alt="" class="lang-flag-p" width="22" height="22"></div>';});sec.innerHTML=html;});
+    document.querySelectorAll('[data-i18n-projects]').forEach(function(sec){var proj=get(T,sec.getAttribute('data-i18n-projects'));if(!proj||!proj.items)return;var title=get(T,'projects.title');var html='<h2>'+loc(esc(title),lang)+'</h2>';proj.items.forEach(function(p){var items=Array.isArray(p.items)?p.items.slice():[];if(p.link&&items.length)items[items.length-1]+=' | djeihoon.ir';html+='<div class="proj-item"><div class="proj-title">'+loc(esc(p.title),lang)+'</div><ul class="proj-ul">'+items.map(function(i){return'<li>'+loc(esc(i),lang)+'</li>';}).join('')+'</ul></div>';});sec.innerHTML=html;});
+    document.querySelectorAll('[data-i18n-skills]').forEach(function(sec){var sk=get(T,sec.getAttribute('data-i18n-skills'));if(!sk||!sk.items)return;var cats=sk.cats||{web:'Web',infra:'Infra',org:'Org'};var order=['web','infra','org'];var h2=sec.querySelector('h2');var html=(h2?h2.outerHTML:'')+' ';order.forEach(function(c){var items=sk.items.filter(function(x){return x.cat===c});if(items.length===0)return;html+='<div style="margin-bottom:5pt"><div style="font-size:10pt;color:var(--ash);margin-bottom:3pt;letter-spacing:0.04em">'+loc(esc(cats[c]||c),lang)+'</div><div class="skill-tags-print">';items.forEach(function(s){var cls='stag stag-adv',dot='sdot-adv';if(s.level==='intermediate'){cls='stag stag-mid';dot='sdot-mid'}else if(s.level==='basic'){cls='stag stag-bas';dot='sdot-bas'}html+='<span class="stag '+cls+'"><span class="stag-dot '+dot+'"></span>'+loc(esc(s.name),lang)+'</span>';});html+='</div></div>';});sec.innerHTML=html;});
+    var el=document.getElementById('printPhoneDisplay');if(el){var d='989383965611'.replace(/^(\d{2})(\d{3})(\d{3})(\d+)/,'+$1 $2 $3 $4');d=toLocalNum(d,lang);el.textContent=(lang==='ar'||lang==='fa')?'\u202A'+d+'\u202C':d;}
+  }).catch(function(){});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+تصویر پروفایل (profile.jpg) را اینجا قرار دهید.
+Place profile.jpg here before deployment.
+حداقل 400×400 پیکسل، فرمت JPG یا PNG، کمتر از 200KB.
