@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html><head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0;url=print/?lang=fa">
-<link rel="canonical" href="https://djeihoon.ir/cv/print/?lang=fa">
+<meta http-equiv="refresh" content="0;url=print/">
+<link rel="canonical" href="https://djeihoon.ir/cv/print/">
 <title>Redirect to Print</title>
-</head><body><p>در حال انتقال به <a href="print/?lang=fa">صفحه چاپ</a>...</p>
-<script>var m=location.search.match(/[?&]lang=(fa|en|ar)/i);window.location.replace('print/?lang='+(m?m[1].toLowerCase():'fa'));</script>
+</head><body><p>در حال انتقال به <a id="printLink" href="print/?lang=fa">صفحه چاپ</a>...</p>
+<script>
+(function(){
+  var m = location.search.match(/[?&]lang=(fa|en|ar)/i);
+  var lang = (m ? m[1].toLowerCase() : 'fa');
+  var target = 'print/?lang=' + lang;
+  var a = document.getElementById('printLink');
+  if (a) a.setAttribute('href', target);
+  var canon = document.querySelector('link[rel="canonical"]');
+  if (canon) canon.setAttribute('href', 'https://djeihoon.ir/cv/print/?lang=' + lang);
+  window.location.replace(target);
+})();
+</script>
 </body></html>
